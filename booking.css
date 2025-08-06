@@ -1,0 +1,551 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #000;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.logo {
+  height: 70px;
+}
+
+/* Hamburger icon default hidden */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin-right: 500px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a.active {
+  color: red;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ff3b3b;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 60px 0 60px;
+  color: white;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  background-color: red;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: darkred;
+}
+
+/* Google Review Box - desktop default */
+.review-box {
+  position: absolute;
+  top: 400px;
+  right: 80px;
+  background: white;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+}
+
+.google-icon {
+  height: 24px;
+}
+
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.carousel-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
+/* MEDIA QUERIES */
+
+/* 1200px */
+@media screen and (max-width: 1200px) {
+  .nav-links {
+    margin-right: 200px;
+    gap: 30px;
+  }
+}
+
+/* 992px */
+@media screen and (max-width: 992px) {
+  .nav-links {
+    margin-right: 100px;
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+}
+
+/* 768px */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    gap: 30px;
+    padding: 20px 0;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero-section {
+    padding: 60px 20px 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .review-box {
+    top: auto;
+    right: auto;
+    bottom: 20px;
+    left: 20px;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 8px;
+  }
+
+  .google-icon {
+    height: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+.custom-footer {
+  background: url('assets/osumi_canyons.jpg') center center/cover no-repeat;
+  color: #fff;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.custom-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+}
+
+.footer-section h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.footer-section p {
+  margin: 10px 0;
+  color: #ddd;
+  font-size: 15px;
+}
+
+.footer-logo {
+  width: 90px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  background: white;
+  color: black;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #444;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* 📱 Responsive */
+@media (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-section {
+    max-width: 500px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: 0 auto 16px;
+  }
+}
+
+
+.footer-section.hours .social-icons {
+  margin-top: 10px;
+}
+
+.footer-section.hours .social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 22px;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-section.hours .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.footer-section.hours .social-icons a[aria-label="Facebook"]:hover {
+  color: #1877f2;
+}
+
+.footer-section.hours .social-icons a[aria-label="Instagram"]:hover {
+  color: #e4405f;
+}
+
+.footer-section.hours .social-icons {
+  background-color: transparent !important;
+  padding: 0;
+  margin: 0;
+}
+.footer-section.hours .social-icons a {
+  background-color: transparent !important;
+  border: none;
+}
+
+.footer-section.hours .social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 22px;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-section.hours .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.footer-section.hours .social-icons a[aria-label="Facebook"]:hover {
+  color: #1877f2; /* Ngjyra Facebook */
+}
+
+.footer-section.hours .social-icons a[aria-label="Instagram"]:hover {
+  color: #e4405f; /* Ngjyra Instagram */
+}
+
+.footer-section.hours .social-icons a[aria-label="WhatsApp"]:hover {
+  color: #25D366; /* Ngjyra WhatsApp */
+}
+
+
+/* Rezervimi - seksioni kryesor */
+.reservation-section {
+  padding: 80px 20px;
+  background-color: #f4f8f9;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Kontejneri i formës */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Titulli */
+.container h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Forma dhe elementët e saj */
+form {
+  display: grid;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+input,
+select {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fdfdfd;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #008c58;
+}
+
+input[type="date"] {
+  cursor: pointer;
+}
+
+/* Çmimi */
+.price-box {
+  font-size: 18px;
+  text-align: right;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* Butoni */
+.submit-btn {
+  padding: 14px;
+  font-size: 18px;
+  background: linear-gradient(to right, #00a86b, #008c58);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to right, #009f63, #007a4e);
+  transform: translateY(-2px);
+}
+
+/* ----------------------- */
+/* MEDIA QUERIES 🔽        */
+/* ----------------------- */
+
+/* Tablet (≤ 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 30px 24px;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+
+  .price-box {
+    text-align: left;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  form {
+    gap: 20px;
+  }
+
+  input,
+  select {
+    font-size: 15px;
+  }
+
+  .submit-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .container h2 {
+    font-size: 22px;
+  }
+}
