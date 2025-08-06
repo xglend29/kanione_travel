@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +7,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #000;
+  background-color: #f4f4f4;
 }
 
+/* HEADER & NAVBAR */
 .navbar {
   position: absolute;
   top: 0;
@@ -26,19 +28,10 @@ body {
   height: 70px;
 }
 
-/* Hamburger icon default hidden */
-.hamburger {
-  display: none;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-
 .nav-links {
   display: flex;
   list-style: none;
   gap: 40px;
-  margin-right: 500px;
 }
 
 .nav-links a {
@@ -58,165 +51,277 @@ body {
   color: #ff3b3b;
 }
 
-.hero-section {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 100px 60px 0 60px;
-  color: white;
-}
-
-.hero-content {
-  max-width: 600px;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.hero-btn {
+.book-button {
   background-color: red;
   color: white;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-size: 16px;
-  text-decoration: none;
-  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
   font-weight: bold;
+  text-decoration: none;
   transition: background-color 0.3s;
 }
 
-.hero-btn:hover {
+.book-button:hover {
   background-color: darkred;
 }
 
-/* Google Review Box - desktop default */
-.review-box {
-  position: absolute;
-  top: 400px;
-  right: 80px;
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
   background: white;
-  color: black;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: 500;
-  font-size: 16px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 90vh;
   display: flex;
   align-items: center;
-  gap: 10px;
-  z-index: 999;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
-.google-icon {
-  height: 24px;
+.hero-background .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-.carousel {
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
-.carousel-img {
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  padding: 12px 25px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e25500;
+}
+
+.review-box {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 4;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
-.carousel-img.active {
-  opacity: 1;
+.review-box .google-icon {
+  width: 20px;
 }
 
-/* MEDIA QUERIES */
-
-/* 1200px */
-@media screen and (max-width: 1200px) {
-  .nav-links {
-    margin-right: 200px;
-    gap: 30px;
-  }
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
-/* 992px */
-@media screen and (max-width: 992px) {
-  .nav-links {
-    margin-right: 100px;
-    gap: 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 36px;
-  }
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
 }
 
-/* 768px */
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
-
+/* Responsive Navigation */
+@media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.95);
     position: absolute;
     top: 80px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    gap: 30px;
-    padding: 20px 0;
-    z-index: 999;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 15px 20px;
+    border-radius: 10px;
   }
 
-  .nav-links.show {
+  .nav-links.active {
     display: flex;
   }
 
   .hamburger {
-    display: block;
+    display: flex;
   }
 
-  .hero-section {
-    padding: 60px 20px 0 20px;
+  .book-button {
+    display: none;
   }
 
   .hero-content h1 {
-    font-size: 28px;
+    font-size: 2rem;
   }
 
-  .hero-btn {
-    font-size: 14px;
-    padding: 10px 20px;
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* RESERVATION FORM STYLING */
+.reservation-section {
+  background: linear-gradient(to right, #e2e2e2, #ffffff);
+  padding: 60px 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.reservation-section .container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.reservation-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+#reservation-form .form-group {
+  margin-bottom: 20px;
+}
+
+#reservation-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+}
+
+#reservation-form input,
+#reservation-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+#reservation-form input:focus,
+#reservation-form select:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.price-box {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.submit-btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #e25500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reservation-section .container {
+    padding: 30px 20px;
   }
 
-  .review-box {
-    top: auto;
-    right: auto;
-    bottom: 20px;
-    left: 20px;
-    font-size: 14px;
-    padding: 10px 16px;
-    border-radius: 8px;
+  #reservation-form input,
+  #reservation-form select {
+    font-size: 15px;
   }
 
-  .google-icon {
-    height: 20px;
+  .submit-btn {
+    width: 100%;
   }
 }
 
@@ -549,3 +654,6 @@ input[type="date"] {
     font-size: 22px;
   }
 }
+
+
+
