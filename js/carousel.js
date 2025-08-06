@@ -41,3 +41,7 @@ const currentYear = new Date().getFullYear();
 const yearText = currentYear > startYear ? `${startYear} - ${currentYear}` : `${startYear}`;
 
 document.getElementById("copyright").innerText = `Copyright © ${yearText}. All rights reserved.`;
+
+
+
+
