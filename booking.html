@@ -2,57 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Booking - Hotel Kanione</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanione Hiking</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+
+
   <link rel="stylesheet" href="booking.css" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-  <!-- intl-tel-input CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css"/>
 </head>
-
 <body>
 
-   <header>
+  <header>
     <nav class="navbar">
       <img src="assets/Hotel Kanione Logo.PNG" alt="Hotel Kanione Logo" class="logo">
-
-<div class="hamburger" onclick="toggleMenu()">☰</div>
-
-<ul class="nav-links">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="booking.html" class="active">Book Now</a></li>
-  <li><a href="services.html">Services</a></li>
-  <li><a href="gallery.html">Gallery</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="booking.html"class="active">Book Now</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
 
-   
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   </header>
 
-<section class="hero-section">
-  <div class="carousel">
-    <img src="assets/WhatsApp Image 2025-08-05 at 12.55.17_e362c509.jpg" alt="Photo 1" class="carousel-img active" />
- 
-  </div>
+  
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-background">
+      <img src="assets/574325192.jpg" alt="Hero Image" class="hero-img" />
+    </div>
+    <div class="hero-content">
+       <h1>Ready for your next adventure?</h1>
+  <p>
+    Don’t wait any longer — explore hidden gems, hike stunning trails, <br>
+    and live unforgettable moments in the heart of nature.
+  </p>
+ <a href="booking.html" class="hero-btn">Book Now</a>
+    </div>
+    <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" target="_blank" class="review-box">
+      <img src="assets/google-icon.png" alt="Google" class="google-icon">
+      <span>⭐⭐⭐⭐⭐ <strong>5.0</strong> | 205 reviews</span>
+    </a>
+  </section>
 
-  <div class="hero-content">
-    <h1>Canyons and Hiking in Skrapar Await You!<br>Skrapar,Albania</h1>
-    <a href="#" class="hero-btn">Book Now</a>
-  </div>
-
-  <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" target="_blank" class="review-box">
-    <img src="assets/google-icon.png" alt="Google" class="google-icon">
-    <span>⭐⭐⭐⭐⭐ <strong>5.0</strong> | 205 reviews</span>
-  </a>
-</section>
-
-
-<section class="reservation-section">
+  <section class="reservation-section">
   <div class="container">
     <h2>Book Your Adventure</h2>
     <form id="reservation-form">
@@ -183,7 +190,7 @@
   <option value="LI">Liechtenstein</option>
   <option value="LT">Lithuania</option>
   <option value="LU">Luxembourg</option>
-  <!-- list continues ... -->
+  
 </select>
 
       </div>
@@ -220,9 +227,12 @@
   </div>
 </section>
 
+
+
 <footer class="custom-footer">
   <div class="footer-content">
-    <!-- Rreth Nesh -->
+  
+
     <div class="footer-section about">
       <img src="assets/Hotel Kanione Logo.PNG" alt="Hotel Kanione Logo" class="footer-logo" />
       <p>
@@ -232,7 +242,7 @@
       </p>
     </div>
 
-    <!-- Kontakt -->
+    
     <div class="footer-section contact">
       <h3>Contact</h3>
       <p><i class="fas fa-map-marker-alt"></i> Rruga Zelencke, Çorovodë 5401</p>
@@ -240,7 +250,6 @@
       <p><i class="fas fa-phone-alt"></i> <a href="Call Us:+355692711576">+355692711576</a></p>
     </div>
 
-    <!-- Orari i Punës -->
 <div class="footer-section hours">
   <h3>Work Hours</h3>
   <p><i class="fas fa-clock"></i> 8:30 AM - 19:30 PM, Monday - Sunday</p>
@@ -264,7 +273,18 @@
   </div>
 
 
-<script src="script.js"></script>
+
+
+
+
+
+  
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
