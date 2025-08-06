@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kanione Hiking</title>
 
-  <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome -->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Lightbox CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,15 +19,15 @@
   <header>
     <nav class="navbar">
       <img src="assets/Hotel Kanione Logo.PNG" alt="Hotel Kanione Logo" class="logo">
-      <ul class="nav-links">
-        <li><a href="index.html" >Home</a> </li>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" >Home</a></li>
         <li><a href="booking.html">Book Now</a></li>
         <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="gallery.html" >Gallery</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-    <!-- Hamburger Menu -->
-      <div class="hamburger" onclick="toggleMenu()">
+     
+      <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
@@ -38,28 +35,29 @@
     </nav>
   </header>
 
-
-  <!-- HERO SECTION -->
+  
   <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-background">
       <img src="assets/WhatsApp Image 2025-08-04 at 11.21.00_54bf24a2.jpg" alt="Hero Image" class="hero-img" />
     </div>
     <div class="hero-content">
-      <h1>Canyons and Hiking in Skrapar Await You!</h1>
-      <p>Explore the stunning beauty of Osumi Canyons and adventure trails in Skrapar, Albania.</p>
+      <h1>What do we offer?</h1>
+<p>
+From thrilling hikes through ancient canyons to peaceful cave explorations and exciting river adventures — we’ve got something for every kind of traveler.  
+Let us take care of the details, while you focus on the experience.  
+Discover our full range of services and start planning your unforgettable journey today!
+</p>
+
       <a href="booking.html" class="hero-btn">Book Now</a>
     </div>
-
     <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" target="_blank" class="review-box">
       <img src="assets/google-icon.png" alt="Google" class="google-icon">
       <span>⭐⭐⭐⭐⭐ <strong>5.0</strong> | 205 reviews</span>
     </a>
   </section>
 
-
-
- <section class="service-section">
+   <section class="service-section">
     <div class="service-card">
       <div class="image">
         <img src="assets/WhatsApp Image 2025-08-04 at 11.21.00_05063e92.jpg" alt="Hiking and Tubing Through Breathtaking Canyons" />
@@ -83,7 +81,7 @@
 
 
 
-   <section class="service-section">
+     <section class="service-section">
     <div class="service-card">
       <div class="image">
         <img src="assets/WhatsApp Image 2025-08-04 at 11.54.49_c4220736.jpg" alt="Pirogoshi Cave Adventure" />
@@ -108,9 +106,9 @@ This tour is perfect for nature lovers, curious explorers, and those who enjoy c
     </div>
   </section>
 
-  
 
-  
+ 
+
 
 
 <footer class="custom-footer">
@@ -159,9 +157,15 @@ This tour is perfect for nature lovers, curious explorers, and those who enjoy c
 
 
 
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
-
-
+  <script src="js/carousel.js"></script>
 </body>
 </html>
